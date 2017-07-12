@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './Github.css'
+import {Route} from 'react-router-dom'
 
 class Github extends Component {
     state = {
@@ -19,7 +20,7 @@ class Github extends Component {
     render() {
         return(
             <div className ='github'>
-                <img classNAme="github-logo" src="http://www.aha.io/assets/github.7433692cabbfa132f34adb034e7909fa.png" alt = "github logo" />
+                <img className="github-logo" src="http://www.aha.io/assets/github.7433692cabbfa132f34adb034e7909fa.png" alt = "github logo" />
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input 
@@ -36,6 +37,8 @@ class Github extends Component {
                         </button>
                     </div>
                 </form>
+                <Route path = "/github/:username" render={(props) => <h3>{props.match.params.username}</h3>} />
+                <Route exact path = "/github" render={() => <h3>Please enter a username to search on Github</h3>} />
             </div>
         )
     }
