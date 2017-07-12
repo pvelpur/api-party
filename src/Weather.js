@@ -5,18 +5,18 @@ import CityInfo from './CityInfo'
 
 class Weather extends Component {
     state = {
-        city: '',
+         cityName: '',
     }
     
     handleChange = (ev) => {
-        this.setState({city: ev.target.value})
+        this.setState({ cityName: ev.target.value})
     }
 
     handleSubmit = (ev) => {
-        const {city} = this.state
+        const {cityName} = this.state
         ev.preventDefault()
-        this.props.history.push(`/weather/${city}`)
-        this.state.city = ''
+        this.props.history.push(`/weather/${ cityName}`)
+        this.state. cityName = ''
         
     }
     
@@ -28,7 +28,7 @@ class Weather extends Component {
                     <div>
                         <input 
                         type="text"
-                        value={this.state.city}
+                        value={this.state. cityName}
                         onChange={this.handleChange}
                         placeholder = "Enter City Name Here" 
                         />
