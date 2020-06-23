@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import './Weather.css'
 import CityInfo from './CityInfo'
 
@@ -15,8 +15,8 @@ class Weather extends Component {
     handleSubmit = (ev) => {
         const {cityName} = this.state
         ev.preventDefault()
-        this.props.history.push(`/weather/${ cityName}`)
-        this.state. cityName = ''
+        this.props.history.push(`/weather/${cityName}`)
+        this.setState({cityName: ''})
         
     }
     
@@ -28,7 +28,7 @@ class Weather extends Component {
                     <div>
                         <input 
                         type="text"
-                        value={this.state. cityName}
+                        value={this.state.cityName}
                         onChange={this.handleChange}
                         placeholder = "Enter City Name Here" 
                         />
@@ -39,8 +39,10 @@ class Weather extends Component {
                         </button>
                     </div>
                 </form>
-                <Route exact path = {this.props.match.url} render = {() => (<h2>Please enter any city in the world</h2>) }  />
-                <Route path = {`${this.props.match.url}/:city`} Component = {CityInfo} />
+                <Switch>
+                    <Route path ="/weather/:cityName" component = {CityInfo} />
+                    <Route exact path = "/weather" render = {() => (<h2>Please enter any city in the world</h2>) }  />  
+                </Switch>
             </div>
         )
     }

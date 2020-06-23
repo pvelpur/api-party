@@ -12,17 +12,22 @@ class CityInfo extends Component {
    }
 
    fetchUserData = () => {
-        fetch(`api.openweathermap.org/data/2.5/weather?q=${this.props.match.params.cities}`)
-        .then(res => res.json())
+        fetch(`api.openweathermap.org/data/2.5/weather?q=${this.props.match.params.cityName}`)
+        .then(res => {
+            res.json()
+        }
+        )
         .then(city => this.setState({ city }))
    }
 
-   render(props){
+   render(){
        return(
-           console.log(this.state.city)
-           /*<div> 
+           console.log(this.props.match.params.cityName)
+          /*<div> 
                <h2>{this.state.city.weather.main}</h2>
            </div>*/
        )
     }
 }
+
+export default CityInfo

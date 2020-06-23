@@ -23,7 +23,7 @@ class App extends Component {
               <NavLink to="/nasa">NASA API</NavLink>
             </li>
             <li>
-              <NavLink to="weather">Weather API</NavLink>
+              <NavLink to="/weather">Weather API</NavLink>
             </li>
           </ul>
         </div>
