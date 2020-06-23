@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './Github.css'
 import {Route,Switch} from 'react-router-dom'
 import GithubUser from './GithubUser'
+import octoCat from './Octocat.png'
 
 class Github extends Component {
     state = {
@@ -14,6 +15,7 @@ class Github extends Component {
 
     handleSubmit = (ev) => {
         ev.preventDefault()
+        // Push a new history thing (we get match history and location)
         this.props.history.push(`/github/${this.state.username}`)
         this.setState({username: ''})
     }
@@ -21,7 +23,7 @@ class Github extends Component {
     render() {
         return(
             <div className ='github'>
-                <img className="github-logo" src="http://www.aha.io/assets/github.7433692cabbfa132f34adb034e7909fa.png" alt = "github logo" />
+                <img className="github-logo" src={octoCat} alt = "github logo" />
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input 

@@ -6,7 +6,7 @@
 }
 
 h1 {
-  font: 60px/75px 'Alfa Slab One', cursive, sans-serif;
+  font: 60px/75px 'Alfa Slab One', cursive, sans-serif;  /* 60/75 => 60 is the size of the font and 75 is the line height (compound rule)*/
   text-transform: uppercase;
 }
 

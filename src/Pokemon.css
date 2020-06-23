@@ -1,14 +1,14 @@
-.weather {
+.pokemon {
     width: 80%;
     margin: 0 auto;
 }
 
-.weather-logo {
+.pokemon-logo {
     width: 100%;
     max-width: 800px;
 }
 
-.weather input {
+.pokemon input {
     font-family: "Gentium Book Basic", serif;
     box-sizing: border-box;
     width: 80%;
@@ -22,7 +22,7 @@
 }
 
 
-.weather button {
+.pokemon button {
     color: darkblue;
     margin-top: 10px;
     width: 50%;
